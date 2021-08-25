@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- YOUR CODE HERE -->
+  <main id="app">
+    <button type="button" @click="changeNav">Click</button>
+    
+    <nav v-bind:class="currentClass">
+      <ul>
+        <li v-for="item in navItems"  class="nav-item">
+          <a v-bind:href="item.label">{{item.label}}</a>
+        </li>
+      </ul>
+      </nav>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        navItems: [
+          {
+            label: "Accueil",
+            href: "/"
+          },
+          {
+            label: "A propos",
+            href: "/about"
+          },
+          {
+            label: "Connexion",
+            href: "/login"
+          },
+          {
+            label: "Magasin",
+            href: "/shop"
+          },
+          {
+            label: "Blog",
+            href: "/blog"
+          },
+          {
+            label: "Partenaires",
+            href: "/partners"
+          },
+          {
+            label: "Equipe",
+            href: "/team"
+          }
+        ],
+        navIsOpen: true
+      },
+      methods : {
+        changeNav : function() {
+          if(this.navIsOpen == true){
+            this.navIsOpen = false;
+          } else {
+            this.navIsOpen = true;
+          }
+        }
+      },
+      computed : {
+        currentClass: function() {
+          if(this.navIsOpen) return ""
+          else return "close"
+        }
+      }
+
+
+      // computed : {
+      //   navBarChange: function() {
+      //     this.navIsOpen = !this.navIsOpen
+      //     return navIsOpen
+      //   }
+      // },
+      // methods: {
+      //   click: function(navBarChange) {
+      //     if(navBarChange === true) {
+      //       this.currentClass = ""
+      //     } else {
+      //       this.currentClass = "close"
+      //     }
+      //   }
+      // }
+
+
+    });
+  </script>
+</body>
+
+</html>

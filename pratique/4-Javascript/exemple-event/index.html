@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./script.js" defer></script> -->
+  </head>
+  <body>
+    <input type="text" class="toto" />
+    <button class="tutu" data-titi="button 123">click</button>
+
+    <script>
+      const btn = document.querySelector(".tutu");
+      const toto = document.querySelector(".toto");
+
+      function triggerAlert(event) {
+        console.log(event);
+        console.log(toto.value);
+      }
+
+      btn.addEventListener("click", triggerAlert);
+    </script>
+  </body>
+</html>

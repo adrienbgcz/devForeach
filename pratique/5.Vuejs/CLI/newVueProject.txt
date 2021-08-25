@@ -1,0 +1,1 @@
+npx @vue/cli create le-nom-de-mon-application

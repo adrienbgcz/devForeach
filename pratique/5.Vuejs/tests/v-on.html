@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Vue.js</title>
+        
+    </head>
+    <body>
+        <main id="app" >
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">GO</button> <!-- v-on:click peut s'abréger en @click-->
+        </main>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script>
+            const app = new Vue({
+                el: "#app",
+                data: {
+                   message: "Hello Vue.js"
+                },
+                methods: {
+                    reverseMessage: function () {
+                        this.message = this.message.split("").reverse().join("");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

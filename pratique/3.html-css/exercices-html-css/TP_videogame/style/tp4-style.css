@@ -1,0 +1,149 @@
+section {
+    max-width: 1000px;
+    margin: auto;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: white;
+    border-bottom-style: solid;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+
+
+nav {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    
+   
+}
+
+nav div {
+    margin: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+nav div a:hover {
+    text-decoration: underline;
+    background-color: #9bce6b;
+    
+}
+
+nav div a {
+    text-decoration: none;
+}
+
+* {
+    /* border : 1px solid red; */
+    background-color: black;
+    color: white;
+   
+}
+
+
+.logo-zombie-header {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.titleAndLogo {
+    display: flex;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+   text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #9bce6b;
+    font-size:xx-large;
+}
+
+.logo-zombie-body {
+    height: 250px;
+    width: 250px;
+    margin-top: 50px;
+    
+    
+}
+
+.section-logo-accueil {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+.section-texte-accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-texte-accueil p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.start-button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    font-size: x-large;
+    border: #9bce6b;
+    border-style: solid;
+    padding : 10px;
+    width : 300px;
+    border-radius: 15px;
+}
+
+
+
+
+iframe {
+    margin-top: 100px;
+}
+
+
+.message {
+    margin-top: 20px;
+    height: 200px;
+    width: 500px;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.photo-presentation{
+    height: 200px;
+    margin-top: 30px;
+}
+
+.section-photo-presentation {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    text-align: left;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size:x-large;
+}
+
+section p {
+    margin-bottom: 60px;
+}

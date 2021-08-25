@@ -1,0 +1,55 @@
+/* p, h1 {
+    color: blue;
+    font-size: 30px;
+
+} */
+
+header h2 {
+    color: blue;
+}
+
+/* .texte {
+    color: green;
+}
+
+#paragraphe-jaune {
+    color: yellow;
+} */
+
+
+
+h1 {
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 25px;
+text-transform: uppercase;
+color: red;
+line-height: 20px;
+background-color: red;
+background-image: url("");
+background-repeat: no-repeat; 
+background-size: cover;
+height: 600px;
+width: 50%;
+margin: 50px;
+margin-top: 50px;
+padding : 50px;
+padding-left : 50px;
+border: 10px solid black;
+
+} 
+
+
+
+/* propriétes de positionnement */
+
+
+/* position:absolute : aligné en haut à gauche par défaut
+top : préciser nombre de pixels*/
+
+/* position: fixed : fixé en haut à gauche par défaut (ou à une position qu'on défini) et ne bouge pas quand on défile
+top : préciser nombre de pixels*/
+
+
+/* relative :*/
+
+/* display inline, block, inline-block :*/

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composant</title>
+</head>
+
+<body>
+    <main id="app">
+        <p>{{message}}</p>
+        <button-counter name="compteur" v-for="(item, index) in totos" v-bind:key="index"></button-counter>
+        
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        const Toto = Vue.component("button-counter", {
+            props: ["name"],
+            data: function () {
+                return {
+                    count: 0,
+                }
+            },
+            methods : {
+                addCount: function() {
+                    this.count++
+                }
+            },
+            template: `
+            <p>{{name}}
+            <button @click="addCount">{{count}}</button>
+            `,
+        });
+
+        const app = new Vue({
+            el: "#app",
+            component: { Toto },
+            data: {
+                message: "Hello from Vue App",
+                totos: [1, 2, 3, 4],
+            },
+            
+            
+        });
+
+    </script>
+
+</body>
+
+</html>

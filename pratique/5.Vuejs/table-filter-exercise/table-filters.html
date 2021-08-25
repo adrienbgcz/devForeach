@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <main id="app">
+    <!-- <p v-for="(user, index) in users" :key="user.id"> -->
+
+    <table>
+      <th v-for="value in thValues">{{ value }}</th>
+      <!-- <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Birthday</th>
+      <th>Profession</th>
+      <th>Status</th>
+      <th>City</th> -->
+
+      <tr>
+        <td><input v-model="idValue" type="text" name="id" @input="filterAll"></td>
+        <td><input v-model="firstnameValue" type="text" name="firstname" @input="filterAll"></td>
+        <td><input v-model="lastnameValue" type="text" name="lastname" @input="filterAll"></td>
+        <td><input v-model="birthdayValue" type="date" name="birthday" @input="filterAll"></td>
+        <td><input v-model="professionValue" type="text" name="profession" @input="filterAll"></td>
+        <td>
+          <select v-model="statusValue" name="status" @input="filterAll">
+            <option value="">Choisir</option>
+            <option value="active">active</option>
+            <option value="inactive">inactive</option>
+          </select>
+        </td>
+        <td><input v-model="cityValue" type="text" name="city" @input="filterAll"></td>
+      </tr>
+
+      <tr v-for="(user, index) in users" :key="user.id">
+        <td>{{user.id}}</td>
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.birthday}}</td>
+        <td>{{user.profession}}</td>
+        <td>{{user.status}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+    </table>
+
+
+    <!-- </p> -->
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: function () {
+        return {
+          users: [],
+
+          thValues: ["ID", "Firstname", "Lastname", "Birthday", "Profession", "Status", "City"],
+          idValue: "",
+          firstnameValue: "",
+          lastnameValue: "",
+          birthdayValue: "",
+          professionValue: "",
+          statusValue: "",
+          cityValue: "",
+          isOk: true,
+          valueToCompare: ""
+        }
+
+      },
+
+      methods: {
+        getData: async function () {
+          try {
+            const response = await fetch("http://localhost:3000/users")
+            const data = await response.json()
+            // console.log(data)
+            this.users = data
+            // console.log("users", this.users)
+          } catch (error) {
+            console.log(error);
+          }
+        },
+
+
+
+
+        // a chaque action dans l'input
+        // filterById: function () {
+
+
+        //   if (this.idValue.length != 0) {
+        //     // on remet la liste principale par défaut
+        //     this.getData() 
+
+        //     //on filtre la liste principale des utilisateurs
+        //     const filteredUsers = this.users.filter(user => {
+        //       return user.id == this.idValue
+        //     })
+        //     console.log(filteredUsers)
+
+        //         // on remplace la liste principale par la liste filtrée
+        //         this.users = filteredUsers
+        //         console.log(this.users)
+
+
+        //   }
+        //   else {
+        //     this.getData()
+
+        //   }
+
+        // },
+
+
+        filterById: function (usersCopy) {
+          console.log(usersCopy)
+          if (this.idValue.length != 0) {
+            // console.log(this.idValue)
+            const filteredUsers = usersCopy.filter(user => user.id === +this.idValue)
+            // console.log(filteredUsers)
+            if (filteredUsers.length !== 0) {
+              return filteredUsers
+            }
+          }
+          return usersCopy
+        },
+
+
+
+        filterByFirstname: function (usersList) {
+
+          if (this.firstnameValue.length != 0) {
+
+            const filteredUsers = usersList.filter(user => user.firstname == this.firstnameValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+        },
+
+
+        filterByLastname: function (usersList) {
+          if (this.lastnameValue.length != 0) {
+
+            const filteredUsers = usersList.filter(user => user.lastname == this.lastnameValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+        },
+
+
+
+
+        filterByBirthday: function (usersList) {
+          let usersListWithBirthdayFormatted = []
+
+          if (this.birthdayValue.length != 0) {
+
+            usersList.forEach(user => {
+              const birthdayFormatted = `${user.birthday[6]}${user.birthday[7]}${user.birthday[8]}${user.birthday[9]}-${user.birthday[3]}${user.birthday[4]}-${user.birthday[0]}${user.birthday[1]}`
+              user.birthday = birthdayFormatted
+              usersListWithBirthdayFormatted.push(user)
+            })
+
+            const filteredUsers = usersListWithBirthdayFormatted.filter(user => user.birthday == this.birthdayValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+        },
+
+
+        filterByProfession: function (usersList) {
+          if (this.professionValue.length != 0) {
+
+            const filteredUsers = usersList.filter(user => user.profession == this.professionValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+
+        },
+
+
+        filterByStatus: function (usersList) {
+
+          if (this.statusValue.length != 0) {
+
+            const filteredUsers = usersList.filter(user => user.status == this.statusValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+        },
+
+
+        filterByCity: function (usersList) {
+          if (this.cityValue.length != 0) {
+
+            const filteredUsers = usersList.filter(user => user.city == this.cityValue)
+
+            if (filteredUsers != 0) {
+              return filteredUsers
+            }
+          }
+          return usersList
+        },
+
+
+        filterAll: async function () { // on créé une copie de la liste des utilisateurs
+          // on créé une copie de la liste des utilisateurs
+          await this.getData()
+          const usersCopy = this.users
+
+
+          let usersState = this.filterByFirstname(usersCopy)
+          usersState = this.filterByLastname(usersState)
+          usersState = this.filterByBirthday(usersState)
+          usersState = this.filterByProfession(usersState)
+          usersState = this.filterByStatus(usersState)
+          usersState = this.filterByCity(usersState)
+
+
+          if (usersState.length != 0) {
+            this.users = usersState
+          }
+          else {
+            this.users = usersCopy
+          }
+        }
+      },
+
+      created: function () {
+
+        this.getData();
+        // console.log(this.users)
+      },
+
+
+
+
+    })
+
+  </script>
+</body>
+
+</html>

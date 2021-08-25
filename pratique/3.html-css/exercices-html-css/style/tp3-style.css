@@ -1,0 +1,80 @@
+section {
+    max-width: 1000px;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    margin: 50px;
+}
+
+* {
+    border : 1px solid red;
+    margin: 10px;
+}
+
+h2 {
+    border-bottom: black;
+    border-bottom-style: solid;
+    font-family: sans-serif;
+}
+
+
+.italy, .japan, .ireland {
+    display: flex;
+    flex-direction: column;
+}
+
+.italy img, .japan img, .ireland img {
+    height: 180px;
+    
+}
+
+.block1 img {
+    height : 250px;
+}
+
+.block1 p {
+margin-left: 50px;
+}
+
+.block1{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .block1 img {
+    flex-grow: 1;
+} */
+
+.block2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+
+
+
+
+
+footer p {
+    background-color: black;
+    color : white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}

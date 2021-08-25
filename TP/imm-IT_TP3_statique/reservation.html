@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/styleReservation.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Réservation</title>
+</head>
+
+<body>
+    <header>
+        <a href="logements.html">
+            <div class="logo">
+                <img src=logos/cocktail.png alt="logo d'un verre à cocktail rouge" />
+                <p>IMM-IT</p>
+            </div>
+        </a>
+        <div class="welcomeMessage">Bienvenue cher collaborateur !</div>
+        
+    </header>
+
+    <div class="banner">
+        <div class="bannerTitle">Réservez vos vacances grâce au CE</div>
+        <a href="logementDetails.html?id=3"><button class="returnButton">Retour au logement →</button></a>
+        
+    </div>
+
+    <section>
+        <h1>
+            Formulaire de réservation pour <span>Résidence la Closerie</span>
+        </h1>
+        
+            <form action="">
+                <div class="inputAndLabel">
+                    <label for="input-nom">Nom</label>
+                    <input type="text" name="nom" id="input-nom" required>
+                </div>
+
+                <div class="inputAndLabel">
+                    <label for = "input-prenom">Prénom</label>
+                    <input type="text" name="prenom" id="input-prenom" required>
+                </div>
+
+                <div class="inputAndLabel">
+                    <label for = "input-pseudo">Pseudo</label>
+                    <input type="text" name="pseudo" id="input-pseudo" >
+                </div>
+
+                <div class="inputAndLabel">
+                    <label for = "input-numero">Numéro de salarié</label>
+                    <input type="text" name="numero" id="input-numero" required>
+                </div>
+
+                <div class="inputAndLabel">
+                    <label for = "input-date-arrivee">Date d'arrivée</label>
+                    <input class="inputDate" type="date" name="numero" id="input-date-arrivee" required >
+                </div>
+
+                <div class="inputAndLabel">
+                    <label for = "input-date-depart">Date de départ</label>
+                    <input class="inputDate" type="date" name="numero" id="input-date-depart" required>
+                </div>
+                
+                <input class="reservationButton" type="submit" value="Réserver maintenant">
+            </form>   
+    </section>
+
+    <footer>Imm-it © 2021</footer>
+</body>
+</html>

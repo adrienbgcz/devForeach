@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+    <title>Document</title>
+  </head>
+ 
+  <body>
+    <main id="app">
+      <!-- form & submit listener -->
+      <form
+        @submit.prevent="submitForm"
+        action="/toto"
+        id="form-1"
+        class="form"
+      >
+        <!-- input text -->
+        <input type="text" v-model="nom" required />
+        <br />
+        <!-- input number -->
+        <input type="number" v-model="age" required min="18" />
+        <br />
+        <!-- zone de texte  -->
+        <textarea v-model="description" cols="30" rows="10" required></textarea>
+        <br />
+        <!-- select -->
+        <select v-model="selectValue">
+          <option disabled value="">Choisissez</option>
+          <option v-for="value in listValue">{{value}}</option>
+        </select>
+        <br />
+        <!-- select multiple -->
+        <select v-model="multipleSelectValue" multiple>
+          <option v-for="value in listValue" :value="value">
+            {{value}}
+          </option>
+        </select>
+        <br />
+        <!-- checkboxes looped from data -->
+        <div v-for="value in listValue">
+          <input type="checkbox" :value="value" v-model="checkboxesValues" />
+          {{value}}
+        </div>
+        <br />
+        <!-- radios looped from data -->
+        <div v-for="value in listValue2">
+          <input type="radio" v-model="radioValue" :value="value" />
+          {{ value }}
+        </div>
+        <button type="submit">action</button>
+        <!-- resetter event -->
+        <button type="button" @click="annuler">Annuler</button>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          nom: "",
+          age: "",
+          description: "",
+          selectValue: "",
+          radioValue: "",
+          listValue: ["un", "deux", "trois"],
+          listValue2: ["quatre", "cinq", "six"],
+          checkboxesValues: ["trois"],
+          radio: "deux",
+          multipleSelectValue: []
+        },
+        methods: {
+          submitForm: function () {
+            let data = {
+              nom: this.nom,
+              age: this.age,
+              description: this.description,
+              selectValue: this.selectValue,
+              checkboxesValues: this.checkboxesValues,
+              radioValue: this.radioValue,
+              multipleSelectValue: this.multipleSelectValue
+            };
+            console.log("post that data :", { data });
+          },
+          annuler: function () {
+            this.nom = "";
+            this.age = 0;
+            this.description = "";
+            this.selectValue = "";
+            this.checkboxesValues = "";
+            this.radioValue = "";
+            this.multipleSelectValue = [];
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

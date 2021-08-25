@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composant</title>
+</head>
+
+<body>
+    <main id="app">
+        <hello v-bind:title="message" @add-o-event="addO"></hello>
+
+        <!-- <button-counter name="compteur" v-for="(item, index) in totos" v-bind:key="index" v-bind:toto="count" @add-count-event="addCount"></button-counter> -->
+        
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        const Hello = Vue.component("hello", {
+            props: ["title"],
+            template: `
+            <h1 @click="emitAddOEvent">{{title}}</h1>
+                `,
+            methods : {
+                emitAddOEvent:function(){
+                    this.$emit("add-o-event")
+                }
+            }
+            });
+            
+            const app = new Vue({
+                el: "#app",
+                component: { Hello },
+                data: {
+                    message: "Hello",
+                    
+                },
+                methods : {
+                    addO:function(){
+                        return this.message += 'o'
+                    }
+                },
+                
+                
+            });
+            
+    </script>
+
+</body>
+
+</html>

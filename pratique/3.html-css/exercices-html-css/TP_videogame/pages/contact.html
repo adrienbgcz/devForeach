@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercices CSS</title>
+    <link href="../style/tp4-style.css" rel="stylesheet">
+    <meta name="description" content="Des supers exercices CSS pour comprendre et apprendre en toute simplicité !">
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="titleAndLogo">
+            <img class="logo-zombie-header" src="../img/logo-zombie.png" alt="Logo d'une main de zombie">
+            <h1>Zombie Outbreak Arena</h1>
+        </div>
+
+        <nav>
+            <div><a href="accueil.html">Accueil</a></div>
+            <div><a href="jeu.html">Jeu</a></div>
+            <div><a href="presentation.html">Présentation</a></div>
+            <div><a href="contact.html">Contactez-nous</a></div>
+        </nav>
+
+    </header>
+
+    <h2>Formulaire de contact</h2>
+
+    <section>
+
+        <form method="#" action="#">
+            <label for="input-prenom">Prénom</label><br />
+            <input type="text" name="prenom" id="input-prenom" minlength="2" maxlength="20" /><br />
+
+            <form method="post" action="#">
+                <label for="input-nom">Nom</label><br />
+                <input type="text" name="prenom" id="input-nom" minlength="2" maxlength="20" /><br />
+
+                <label for="input-mail">Email</label><br />
+                <input type="email" name="email" id="input-mail" required /><br />
+
+                <textarea class="message" name="message" placeholder="Saisissez votre message"></textarea><br />
+
+                <input type="submit" value="Valider" />
+            </form>
+
+    </section>

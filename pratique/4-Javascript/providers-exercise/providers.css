@@ -1,0 +1,445 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette|Rajdhani|Abril+Fatface|Poller+One&display=swap");
+/* 
+font-family: 'Courgette', cursive;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Abril Fatface', cursive;
+font-family: 'Poller One', cursive;
+
+*/
+
+:root {
+  /* FONTS */
+  --font-one: "Courgette", cursive;
+  --font-two: "Poller One", cursive;
+  --font-three: "Rajdhani", sans-serif;
+  /* COLORS */
+  --dark: #282828;
+  --light: white;
+}
+
+/* INDEX */
+
+@media (min-width: 0px) and (max-width: 599px) and (orientation: portrait) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: left;
+    background: white;
+    box-shadow: 0 5px 10px var(--dark);
+  }
+  #brand {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav {
+    margin-top: 10vh;
+    position: fixed;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: var(--dark);
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 2rem;
+    z-index: 1;
+    transition: right 0.3s;
+    -webkit-transition: right 0.3s;
+    -moz-transition: right 0.3s;
+    -ms-transition: right 0.3s;
+    -o-transition: right 0.3s;
+  }
+  .nav-open {
+    right: 0;
+  }
+  .nav-close {
+    right: -100vw;
+  }
+  #nav a {
+    color: var(--light);
+  }
+  #nav-icon {
+    height: 10vh;
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    font-size: 2rem;
+    transition: transform 0.3s;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+  }
+  main {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-two);
+    margin-bottom: 50px;
+  }
+  h3 {
+    font-family: var(--font-one);
+  }
+  article a {
+    font-family: var(--font-three);
+  }
+  .article-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 100%;
+    padding: 30px;
+    margin: 25px;
+    box-shadow: -1px 1px 50px lightgrey;
+    border-radius: 2px;
+  }
+  a:hover {
+    color: var(--blue);
+  }
+  .fa-star {
+    color: var(--blue);
+    font-size: 1rem;
+  }
+  footer {
+    display: flex;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 599px) and (orientation: landscape) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    box-shadow: 0 5px 10px var(--dark);
+  }
+  #brand {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav-icon {
+    display: none;
+  }
+  main {
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-two);
+    margin-bottom: 50px;
+  }
+  h3 {
+    font-family: var(--font-one);
+  }
+  article a {
+    font-family: var(--font-three);
+  }
+  .article-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 40%;
+    padding: 30px;
+    margin: 25px;
+    box-shadow: -1px 1px 50px lightgrey;
+    border-radius: 2px;
+  }
+  a:hover {
+    color: var(--blue);
+  }
+
+  .fa-star {
+    color: var(--blue);
+  }
+
+  footer {
+    display: flex;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 33px;
+  }
+}
+
+@media (min-width: 600px) and (orientation: portrait) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    box-shadow: 0 5px 10px var(--dark);
+  }
+  #brand {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav-icon {
+    display: none;
+  }
+  main {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-two);
+    margin-bottom: 50px;
+  }
+  h3 {
+    font-family: var(--font-one);
+  }
+  article a {
+    font-family: var(--font-three);
+  }
+  .article-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 40%;
+    padding: 30px;
+    margin: 25px;
+    box-shadow: -1px 1px 50px lightgrey;
+    border-radius: 2px;
+  }
+  a:hover {
+    color: var(--blue);
+  }
+
+  .fa-star {
+    color: var(--blue);
+  }
+
+  footer {
+    display: flex;
+    height: 15vh;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    box-shadow: 0 5px 10px var(--dark);
+  }
+  #brand {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.5rem;
+  }
+  #nav-icon {
+    display: none;
+  }
+  main {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-two);
+    margin-bottom: 50px;
+  }
+  h3 {
+    font-family: var(--font-one);
+  }
+  article a {
+    font-family: var(--font-three);
+  }
+  .article-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 40%;
+    padding: 30px;
+    margin: 25px;
+    box-shadow: -1px 1px 50px lightgrey;
+    border-radius: 2px;
+  }
+  a:hover {
+    color: var(--blue);
+  }
+
+  .fa-star {
+    color: var(--blue);
+  }
+
+  footer {
+    display: flex;
+    height: 15vh;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 900px) and (orientation: landscape) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: white;
+    box-shadow: 0 2px 5px var(--dark);
+  }
+  #brand {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 1.8rem;
+  }
+  #nav {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-one);
+    font-size: 2rem;
+  }
+  #nav-icon {
+    display: none;
+  }
+
+  main {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h2 {
+    text-align: center;
+    font-family: var(--font-two);
+    margin-bottom: 50px;
+  }
+  h3 {
+    font-family: var(--font-one);
+  }
+  article a {
+    font-family: var(--font-three);
+  }
+  .article-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 24%;
+    padding: 30px;
+    margin: 25px;
+    box-shadow: -1px 1px 50px lightgrey;
+    border-radius: 2px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  a:hover {
+    color: var(--blue);
+  }
+
+  .fa-star {
+    color: var(--blue);
+  }
+
+  footer {
+    display: flex;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    /* STYLE */
+  </style>
+</head>
+
+<body>
+
+  <main id="app">
+
+    <form @submit.prevent="postData">
+      <input type="text" v-model="firstName" /><br /><br />
+      <input type="text" v-model="lastName" /><br /><br />
+      <div v-for="gender in radioValues">
+        <input type="radio" v-model="genderValue" v-bind:value="gender" />
+        {{gender}}
+      </div><br />
+
+      <input type="checkbox" v-model="cguIsOk" id="cgu" name="cgu" />
+      <label for="cgu" name="cgu">Accepter les CGU</label>
+      <br /><br />
+
+      <select v-model="workValue">
+        <option disabled value="">Choisissez</option>
+        <option v-for="value in listValues">{{value}}</option>
+      </select><br /><br />
+
+      <button type="submit">Envoyer</button>
+
+      <span>{{chooseMessage}}</span>
+    </form>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        firstName: "",
+        lastName: "",
+        genderValue: "",
+        cguIsOk: false,
+        workValue: "",
+        radioValues: ["Female", "Male"],
+        listValues: ["Non-renseigné", "Etudiant", "Sans-emploi", "Employé"],
+        empty: null,
+        dataSent: null,
+        message: "",
+      },
+      computed: {
+        chooseMessage: function () {
+          if (this.dataSent == true) {
+            this.message = "Vos données ont bien été envoyées"
+          }
+          if (this.dataSent == false) {
+            this.message = "Une erreur est survenue, vos données n'ont pas été envoyées"
+          }
+          if (this.empty == true) {
+            this.message = "Veuillez renseigner tous les champs"
+          }
+          this.dataSent = null;
+          
+          return this.message;
+        }
+      },
+      methods: {
+        // displayData: function() {
+        //   let data = {
+        //     firstName: this.firstName,
+        //     lastName: this.lastName,
+        //     genderValue: this.genderValue,
+        //     cguIsOk: this.cguIsOk,
+        //     workValue: this.workValue
+        //   }
+        //   console.log(data);
+        // }
+
+        postData: async function () {
+          this.empty = null
+          if (this.firstName === "" || this.lastName === "" || this.genderValue === "" || this.cguIsOk == false || this.workValue === "") {
+            this.empty = true
+            return //pour retourner postdata et ne pas exécuter la suite
+          }
+
+          let data = {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            genderValue: this.genderValue,
+            cguIsOk: this.cguIsOk,
+            workValue: this.workValue
+          }
+          console.log(data)
+          try {
+            this.dataSent = true;
+            const response = await fetch("http://localhost:9004/test", {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+          }
+          catch (error) {
+            console.log(error);
+            this.dataSent = false;
+          }
+        },
+      }
+
+    });
+
+
+
+  </script>
+</body>
+​
+
+
+</html>

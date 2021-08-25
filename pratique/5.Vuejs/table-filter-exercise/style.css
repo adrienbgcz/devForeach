@@ -1,0 +1,15 @@
+table,
+th,
+td {
+  border: 1px solid #333;
+  border-collapse: collapse;
+  padding: 11px;
+}
+th {
+  width: 150px;
+}
+
+select {
+  width: 90%;
+  height: 22px;
+}

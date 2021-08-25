@@ -1,0 +1,113 @@
+{
+    "users" : [
+        {
+            "id": 1,
+            "firstname" : "Etienne",
+            "lastname" : "Daho",
+            "birthday": "14/01/1956",
+            "profession" : "musician",
+            "status" : "inactive",
+            "city" : "Paris"
+        },
+        {
+            "id": 2,
+            "firstname" : "Corinne",
+            "lastname" : "Masiero",
+            "birthday": "03/02/1964",
+            "profession" : "actress",
+            "status" : "inactive",
+            "city" : "Lille"
+        },
+        {
+            "id": 3,
+            "firstname" : "Aurore",
+            "lastname" : "Mozdzierz",
+            "birthday": "20/10/1983",
+            "profession" : "teacher",
+            "status" : "active",
+            "city" : "Roubaix"
+        },
+          
+        {
+            "id": 4,
+            "firstname" : "Jean-Claude",
+            "lastname" : "Casadesus",
+            "birthday": "07/12/1935",
+            "profession" : "musician",
+            "status" : "inactive",
+            "city" : "Lille"
+        },
+        {
+            "id": 5,
+            "firstname" : "Viggo",
+            "lastname" : "Mortensen",
+            "birthday": "20/10/1958",
+            "profession" : "actor",
+            "status" : "inactive",
+            "city" : "New-York"
+        },
+        {
+            "id": 6,
+            "firstname" : "Thibaut",
+            "lastname" : "Leroy",
+            "birthday": "12/06/1982",
+            "profession" : "teacher",
+            "status" : "active",
+            "city" : "Lille"
+        },
+        {
+            "id": 7,
+            "firstname" : "Byronn",
+            "lastname" : "Cambier",
+            "birthday": "15/05/2002",
+            "profession" : "developer",
+            "status" : "active",
+            "city" : "Lille"
+        },
+        {
+            "id": 8,
+            "firstname" : "Marina",
+            "lastname" : "VandenBosh",
+            "birthday": "15/05/1989",
+            "profession" : "developer",
+            "status" : "active",
+            "city" : "Lille"
+        },
+        {
+            "id": 9,
+            "firstname" : "Martin",
+            "lastname" : "Scorsese",
+            "birthday": "17/09/1942",
+            "profession" : "director",
+            "status" : "inactive",
+            "city" : "New-York"
+        },
+        {
+            "id": 10,
+            "firstname" : "Pablo",
+            "lastname" : "Picasso",
+            "birthday": "25/09/1881",
+            "profession" : "painter",
+            "status" : "inactive",
+            "city" : "Malada"
+        },
+        {
+            "id": 11,
+            "firstname" : "Francis",
+            "lastname" : "Leroy",
+            "birthday": "25/09/1927",
+            "profession" : "CTO",
+            "status" : "inactive",
+            "city" : "Laventie"
+        },
+        {
+            "id": 12,
+            "firstname" : "Thibaut",
+            "lastname" : "Leroy",
+            "birthday": "12/06/2000",
+            "profession" : "developer",
+            "status" : "active",
+            "city" : "Lille"
+        }
+    ]
+}

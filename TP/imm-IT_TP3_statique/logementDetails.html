@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/styleDetailsLogement.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <title>Détails logement</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="logements.html">
+                <div class="logo">
+                    <img src=logos/cocktail.png alt="logo d'un verre à cocktail rouge" />
+                    <p>IMM-IT</p>
+                </div>
+            </a>
+            <div class="welcomeMessage">Bienvenue cher collaborateur !</div>
+        </header>
+
+        <div class="banner">
+            <div class="bannerTitle">Réservez vos vacances grâce au CE</div>
+            <a href="logements.html"><button class="returnButton">Retour aux logements →</button></a>
+        </div>
+
+        <section>
+                <h1>Résidence la Closerie</h1>
+            <div class="mapPositionLogoAndText">
+                <img class="mapPositionLogo" src="logos/map-position.png">
+                <h2>Deauville</h2>
+            </div>
+            
+            <div class="mainPicture">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/96999366.jpg?k=84a2d2c5c6d56a9b8bcab951dcf517afe47a953996ccd2a36bb7329bf4df3f1f&o=&hp=1">
+            </div>
+
+            <div class="allLogos">
+                
+                <div class="logoWithText">
+                    <img src="logos/maison-silhouette-noire-sans-porte.png">
+                    <p>Surface intérieure</p>
+                    <p>100 m²</p>
+                </div>
+                
+                <div class="logoWithText">
+                    <img src="logos/umbrella.png">
+                    <p>Surface extérieure</p>
+                    <p>30 m²</p>
+                </div>
+
+                <div class="logoWithText">
+                    <img src="logos/living-room.png">
+                    <p>Nombre de pièces</p>
+                    <p>2</p>
+                </div>
+
+                <div class="logoWithText">
+                    <img src="logos/bed.png">
+                    <p>Nombre de chambres</p>
+                    <p>1</p>
+                </div>
+                
+                <div class="logoWithText">
+                    <img src="logos/pawprint.png">
+                    <p>Animaux</p>
+                    <p>interdits</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>Description</h3>
+                <p class="description">"Installée près de la plage et de la promenade de Deauville, la Résidence La Closerie Deauville possède un espace de bien-être avec une piscine intérieure, un sauna et un jacuzzi. Cet établissement 4 étoiles propose également des séances de massage sur demande et un service de garde d’enfants. Ses chambres et appartements modernes comprennent une télévision par câble ainsi qu’une kitchenette entièrement équipée munie d’un micro-ondes et d’un réfrigérateur. Certains logements bénéficient d’un balcon. Une connexion Wi-Fi gratuite est accessible dans l'ensemble des locaux."</p>
+            </div>
+
+            <div class="reservationButtonPosition">
+            <a href="reservation.html?id=${logementToDisplay[0].id}"><button class="reservationButton">Réserver maintenant</button></a>
+            </div>
+
+        </section>
+        <footer>Imm-it © 2021</footer>
+    </body>
+</html>

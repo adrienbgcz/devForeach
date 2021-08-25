@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <title>Document</title>
+</head>
+
+<body>
+  <main id="app">
+    <article v-for="product in products">
+      <card v-if="!product.isEditable" :key="product.id" v-bind:product="product" @display-form-event="displayForm">
+      </card>
+      <detailscard v-if="product.isEditable" :key="product.id" :product="product"
+        @display-changed-item-event="displayChangedItem"></detailscard>
+    </article>
+
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+  <script>
+    // CARD COMPONENT
+    const Card = Vue.component("card", {
+      props: ["product"],
+      template: `
+        <div>
+          <img :src=product.img>
+          <h1 class="title">{{product.label}}</h1>
+          <p class="desc">{{product.description}}</p>
+          <p class="price">{{product.price}}</p>
+          <p class="tags" v-for="(tag, step) in product.tags" :key="step">{{tag}}</p>
+          <button @click="displayFormEvent(product.id)">Editer</button>
+        </div>
+        `,
+      methods: {
+        //emettre un evenement personnalisé
+        displayFormEvent: function (productId) {
+          this.$emit("display-form-event", productId)
+        }
+      },
+      watch: {
+        product: function (value) {
+          console.log(value)
+        }
+      }
+    })
+
+    // FORM COMPONENT
+
+    const DetailsCard = Vue.component("detailscard", {
+      props: ["product"],
+      data: function () {
+        return {
+          productId: this.product.id, // ce this se réfère aux data contenues dans l'appli
+          productImg: this.product.img, // on déclare une clé, liée au v-model, avec la valeur dans les props par défaut, mais qu'on modifier à partir du composant
+          productLabel: this.product.label,
+          productDescription: this.product.description,
+          productPrice: this.product.price,
+          productTags: this.product.tags
+        }
+
+      },
+      methods: {
+
+        displayChangedItemEvent: function () {
+          const newData = {
+            id: this.productId, // ce this se réfère aux data contenues dans le composant
+            img: this.productImg,
+            isEditable: false,
+            label: this.productLabel,
+            description: this.productDescription,
+            price: this.productPrice,
+            tags: this.productTags,
+
+          }
+          console.log(newData)
+          this.$emit("display-changed-item-event", newData)
+        }
+
+      },
+      template: `
+        <form @submit.prevent="displayChangedItemEvent" >
+          <p>{{this.product.isEditable}}</p>
+          <p>img</p>
+          <input type="text" v-model="productImg"></input>
+          
+          <p>Libellé</p>
+          <input type="text" v-model="productLabel"></input>
+
+          <p>Description</p>
+          <textarea rows="10" cols="50" v-model="productDescription"></textarea>
+
+          <p>Price</p>
+          <input type="text" v-model="productPrice"></input>
+
+          <p>Référence</p>
+          <p class="tags" v-for="tag in productTags">{{tag}}</p>
+
+          <input type="submit" class="field"></input>
+        </form>
+        `,
+
+    })
+
+
+    // APPLICATION
+    const app = new Vue({
+      el: "#app",
+      data: function () {
+        return {
+
+          products: [
+            {
+              id: 1,
+              img: "https://m1.lmcdn.fr/media/1/5bd2155e1a8f3118013c738e/.jpg",
+              label: "Marteau",
+              description:
+                "Un marteau pour éviter d'avoir à planter des clous avec une scie",
+              price: "19.90",
+              tags: ["dangereux", "écrasant"],
+
+            },
+            {
+              id: 2,
+              img: "https://media.castorama.fr/is/image/Castorama/scie-b-ton-cellulaire-stanley-650-mm~3253561154416_02c?$MOB_PREV$&$width=618&$height=618",
+              label: "Scie",
+              description:
+                "Une scie pour éviter d'avoir à scier des planches avec un marteau",
+              price: "29.90",
+              tags: ["dangereux", "coupant"],
+
+            },
+            {
+              id: 3,
+              img: "https://m1.lmcdn.fr/media/1/5d7bbf487eb45f20ccad5579/.jpeg",
+              label: "Clou",
+              description:
+                "Un clou pour éviter d'avoir à fixer des planches avec des punaises",
+              price: "9.90",
+              tags: ["dangereux", "piquant"],
+            },
+
+          ],
+        }
+
+      },
+      methods: {
+        displayForm: function (productId) {
+
+          const productsCopy = []
+
+          this.products.forEach(product => {
+            product.isEditable = false
+            if (product.id == productId) {
+              product.isEditable = true
+            }
+            productsCopy.push(product)
+          });
+          this.products = productsCopy
+
+          // this.$forceUpdate()
+
+
+          // créer une copy des données modifiées
+
+          // faire un foreach en créant une clé product.isEditable = false
+          // mettre condition if(id==id) product.isEditable = true
+          // push dans un tableau
+
+
+          //OU
+          // this.$forceUpdate()
+        },
+        // displayChanges: function (productId) {
+        //   const productWithChanges = products.filter(product => product.id = productId)
+        //   console.log(productWithChanges)
+        // }
+
+        displayChangedItem: function (newData) {
+
+          const index = this.products.findIndex(product => product.id === newData.id)     // ATTENTION : pas de {} à findIndex
+          console.log(index)
+          this.products.splice(index, 1, newData)
+      
+        }
+
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+{
+    "fields" : [
+        {
+            "id": 1,
+            "ref": "",
+            "question": "Qu'elle est la nature de votre demande ?",
+            "type": "text"
+        },
+        {
+            "id": 2,
+            "ref": [],
+            "question": "Votre habitation possède-t-elle ",
+            "type": "checkbox",
+            "responses": ["l'électricité", "l'eau courante", "le gaz"]
+        },
+        {
+        "id": 3,
+        "ref": "lift",
+        "question": "Votre habitation possède-t-elle un ascenseur ?",
+        "type": "radio",
+        "responses": ["oui", "non"]
+        },
+        {
+        "id": 4,
+        "ref": "",
+        "question": "Le matériel à réparer semble-t-il",
+        "type": "select",
+        "responses": [
+            "en très mauvais état",
+            "en mauvais état",
+            "en bon état"
+        ]
+        },
+        {
+        "id": 5,
+        "ref": "2021-05-18",
+        "question": "Saississez la date de l'intervention désirée",
+        "type": "date"
+        },
+        {
+        "id": 6,
+        "ref": "",
+        "question": "Voulez-vous ajouter quelque-chose ?",
+        "type": "textarea"
+        }
+    ] 
+}

@@ -1,0 +1,50 @@
+img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.title {
+    width: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.block {
+    width : 300px;
+    background-color: white;
+    box-shadow: 6px 6px 0px lightgrey;
+    border-radius: 10px;
+}
+
+p {
+    width: 270px;
+    padding:10px;
+}
+
+.cards {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    /* height : 1000px; */
+}
+
+body {
+    height : 1000px;
+}
+
+
+
+
+* {
+    border : 1px solid red;
+    
+}
+
+
+/* {
+    max-width: 1200px;
+    margin: auto;
+} */

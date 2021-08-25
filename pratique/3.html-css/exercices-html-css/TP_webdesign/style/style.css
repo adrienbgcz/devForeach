@@ -1,0 +1,284 @@
+
+body {
+    margin: 0;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 70px;
+    margin-left: 50px;
+}
+
+nav a {
+    padding: 30px;
+    text-decoration: none;
+    color: #000000;
+    font-family: lato;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+
+header {
+    border-bottom: lightgray;
+    box-shadow: 1px 1px 4px lightgrey;
+    border-bottom-style: solid;
+    padding-bottom: 15px;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.main-game {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+
+
+.main-description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    width: 500px;
+}
+
+.main-description p {
+    text-align: justify;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.main-price {
+    font-family: lato;
+    /* font-weight: bold; */
+    font-size: 40px;
+    color: #4183D9;
+}
+
+.main-buttons {
+    margin-top: 20px
+}
+
+.buy-button {
+    width: 170px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    background-color:#4183D9;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    
+}
+
+.favorites-button {
+    width: 170px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    background-color:#F9406D;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    margin-left: 25px;
+}
+
+.iframe {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.caracteristiques {
+    margin-top: 70px;
+}
+
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 5px;
+    padding: 20px;
+    border-width: 2px;
+    box-shadow: 1px 1px 4px lightgrey;
+    
+}
+
+.all-cards {
+    /* margin-top: 70px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-titles {
+    font-family: lato;
+    font-weight: bold;
+    margin-top: 70px;
+    color: #4183D9;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.game-card img {
+    width: 100px;
+}
+
+.game-card h3 {
+    font-size: 16px;
+}
+
+.game-card p {
+    font-family: lato;
+    font-size: 18px;
+    color: #4183D9;
+}
+
+.bottom-list li a {
+    color:#000000;
+}
+
+.bottom-list li {
+    margin-top: 3px;
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+footer p {
+    color: white;
+    font-family: lato;
+}
+
+.main-game p {
+    font-family: Lato;
+}
+
+
+h1, h2 {
+    font-family: lato;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.titles-bottom {
+    font-family: lato;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+td {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    font-family:  lato;
+}
+
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.main-td {
+    background-color: lightgray;
+    text-align: center;
+}
+
+.second-td {
+    padding-left: 50px;
+}
+
+button:hover {
+cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    .main-game {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 50px;
+        
+    }
+
+    .main-description {
+        display: flex;
+        flex-direction: column;
+        
+        width: 300px;
+    }
+    .main-buttons {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .section-titles {
+        text-align: center;
+    }
+    .caracteristiques {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+    .all-cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    } 
+
+    .game-card {
+        margin-bottom: 30px;
+    }
+
+    
+}
+
+/* * {
+    border:solid;
+    border-color: red;
+    border-width: 1px;
+} */
